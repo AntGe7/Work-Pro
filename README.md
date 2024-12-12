@@ -1,39 +1,41 @@
-# work-pro
+# Work - Pro
 
-This template should help get you started developing with Vue 3 in Vite.
+## 1.提交信息规范
 
-## Recommended IDE Setup
+提交信息需符合 [Conventional Commit](https://www.conventionalcommits.org/) 规范：
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-pnpm install
+```text
+<type>: <subject>
 ```
 
-### Compile and Hot-Reload for Development
+### Type 类型
 
-```sh
-pnpm dev
-```
+- **feat**: 新功能
+- **fix**: 修复问题
+- **docs**: 文档修改
+- **style**: 代码样式（不影响功能）
+- **refactor**: 代码重构
+- **test**: 添加或修改测试
+- **chore**: 其他修改（例如构建流程）
 
-### Type-Check, Compile and Minify for Production
+### Subject 描述
 
-```sh
-pnpm build
-```
+- 简短清晰，描述本次提交的核心内容。
+- **不需要以句号结尾。**
 
-### Lint with [ESLint](https://eslint.org/)
+## 2.增加调式工具
 
-```sh
-pnpm lint
+- 使用 [code-inspector-plugin](https://inspector.fe-dev.cn/) 插件，增加调式工具。
+- 在 `vite.config.ts` 中配置插件。
+
+```ts
+import { codeInspectorPlugin } from 'code-inspector-plugin'
+
+export default defineConfig({
+  plugins: [
+    codeInspectorPlugin({
+      bundler: 'vite',
+    }),
+  ],
+})
 ```
